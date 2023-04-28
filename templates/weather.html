@@ -35,8 +35,9 @@
 					<div class="card-body">
 						<h5 class="card-title">{{ forecast.date }}</h5>
 						<h6 class="card-subtitle text-muted mb-2">{{ forecast.description }}</h6>
-						<p>Temperature: {{ forecast.temperature }}&deg;C</p>
+						<p class="card-text">Temperature: {{ forecast.temperature }}&deg;C</p>
 						<p class="card-text">Humidity: {{ forecast.humidity }}%</p>
+						<p class="card-text">Wind Speed: {{ forecast.wind_speed }} km/h</p>
 					</div>
 				</div>
 				{% endfor %}

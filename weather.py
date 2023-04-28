@@ -38,6 +38,7 @@ def weather():
                 "date": data["list"][i]["dt_txt"],
                 "temperature": data["list"][i]["main"]["temp"],
                 "humidity": data["list"][i]["main"]["humidity"],
+                "wind_speed": data["list"][i]["wind"]["speed"],
                 "icon": data["list"][i]["weather"][0]["icon"]
             }
             forecasts.append(forecast)
