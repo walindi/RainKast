@@ -22,7 +22,7 @@
 						<h5 class="card-title">{{ current_weather.description }}</h5>
 						<h6 class="card-subtitle mb-2 text-muted">Temperature: {{ current_weather.temperature }}&deg;C</h6>
 						<p class="card-text">Humidity: {{ current_weather.humidity }}%</p>
-						<p class="card-text">Wind Speed: {{ current_weather.wind_speed }} km/h</p>
+						<p class="card-text">Wind Speed: {{ current_weather.windspeed }} km/h</p>
 					</div>
 				</div>
 				{% for forecast in forecasts %}
@@ -31,7 +31,6 @@
 						<h5 class="card-title">{{ forecast.date }}</h5>
 						<h6 class="card-subtitle mb-2 text-muted">Temperature: {{ forecast.temperature }}&deg;C</h6>
 						<p class="card-text">Humidity: {{ forecast.humidity }}%</p>
-						<p class="card-text">Wind Speed: {{ forecast.wind_speed }} km/h</p>
 					</div>
 				</div>
 				{% endfor %}
