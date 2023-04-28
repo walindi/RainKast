@@ -15,7 +15,7 @@ def weather():
         city = request.form["city"]
 
         # API endpoint url
-        url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
+        url = f"https://api.openweathermap.org/data/2.5/forecast?q={city}&appid={api_key}&units=metric"
 
         # Make API request and save response
         response = requests.get(url.format(city))
