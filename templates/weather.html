@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RainKast - {{ city }}</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h1 class="my-5">Weather Forecast for {{ city }}</h1>
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-md-6 col-lg-4">
+				<div class="card mb-5">
+					<div class="card-body">
+						<h5 class="card-title">{{ current_weather.description }}</h5>
+						<h6 class="card-subtitle mb-2 text-muted">Temperature: {{ current_weather.temperature }}&deg;C</h6>
+						<p class="card-text">Humidity: {{ current_weather.humidity }}%</p>
+						<p class="card-text">Wind Speed: {{ current_weather.wind_speed }} km/h</p>
+					</div>
+				</div>
+				{% for forecast in forecasts %}
+				<div class="card mb-3">
+					<div class="card-body">
+						<h5 class="card-title">{{ forecast.date }}</h5>
+						<h6 class="card-subtitle mb-2 text-muted">Temperature: {{ forecast.temperature }}&deg;C</h6>
+						<p class="card-text">Humidity: {{ forecast.humidity }}%</p>
+						<p class="card-text">Wind Speed: {{ forecast.wind_speed }} km/h</p>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+	<!-- Bootstrap JS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
