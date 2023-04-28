@@ -32,8 +32,9 @@ def weather():
         }
 
         forecasts = []
-        for i in range(1):
+        for i in range(1, len(data["list"]), 2):
             forecast = {
+                "description": data["list"][i]["weather"][0]["description"],
                 "date": data["list"][i]["dt_txt"],
                 "temperature": data["list"][i]["main"]["temp"],
                 "humidity": data["list"][i]["main"]["humidity"],
