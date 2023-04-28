@@ -37,14 +37,13 @@ def weather():
                 "date": data["list"][i]["dt_txt"],
                 "temperature": data["list"][i]["main"]["temp"],
                 "humidity": data["list"][i]["main"]["humidity"],
-                "windspeed": data["list"][i]["main"]["wind"]["speed"],
                 "icon": data["list"][i]["weather"][0]["icon"]
             }
             forecasts.append(forecast)
-    
+
         # Render template with data
         return render_template("weather.html",city=city.title(), current_weather=current_weather, forecasts=forecasts)
-    
+
     else:
         return redirect(url_for("home"))
 
