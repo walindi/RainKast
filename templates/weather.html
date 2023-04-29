@@ -9,7 +9,8 @@
 	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-	<div class="container-fluid">
+
+	<div class="container-fluid" style="background-color: #4B515D;">
 		<div class="row">
 			<div class="col-sm-12 text-center">
 				<h1 class="my-5">Weather Forecast for {{ city }}</h1>
@@ -17,13 +18,23 @@
 		</div>
 		<div class="row justify-content-center">
 			<div class="col-md-6 col-lg-4">
-				<div class="card mb-5">
+
+				<div class="card mb-5" style="color: #4B515D; border-radius: 35px;">
+
 					<div class="card-body">
-						<h4 class="card-title">Current Weather</h4>
-						<h5 class="card-subtitle text-muted mb-2">{{ current_weather.description }}</h5>
-						<p class="card-text">Temperature: {{ current_weather.temperature }}&deg;C</p>
+						<div class="d-flex">
+							<h6 class="flex-grow-1">{{ city }}</h6>
+							<h6>Current Weather</h6>
+						</div>
+
+						<div class="d-flex flex-column text-center mt-5 mb-4">
+							<h6 class="display-4 mb-0 font-weight-bold" style="color: #1C2331;">{{ current_weather.temperature }}&deg;C</h6>
+							<span class="card-subtitle text-muted mb-2" style="color: #868B94">{{ current_weather.description }}</span>
+						</div>
+
 						<p class="card-text">Humidity: {{ current_weather.humidity }}%</p>
 						<p class="card-text">Wind Speed: {{ current_weather.windspeed }} km/h</p>
+						<i class="fa-regular fa-wind"></i>
 					</div>
 				</div>
 
@@ -31,11 +42,18 @@
 					<h3>Forecasts:</h3>
 				</div>
 				{% for forecast in forecasts %}
-				<div class="card mb-3">
+				<div class="card mb-3" style="color: #4B515D; border-radius: 35px;">
 					<div class="card-body">
-						<h5 class="card-title">{{ forecast.date }}</h5>
-						<h6 class="card-subtitle text-muted mb-2">{{ forecast.description }}</h6>
-						<p class="card-text">Temperature: {{ forecast.temperature }}&deg;C</p>
+						<div class="d-flex">
+							<h6 class="flex-grow-1">{{ city }}</h6>
+							<h6>{{ forecast.date }}</h6>
+						</div>
+
+						<div class="d-flex flex-column text-center mt-5 mb-4">
+							<h6 class="display-4 mb-0 font-weight-bold" style="color: #1C2331;">{{ forecast.temperature }}&deg;C</h6>
+							<span class="card-subtitle text-muted mb-2" style="color: #868B94">{{ forecast.description }}</span>
+						</div>
+
 						<p class="card-text">Humidity: {{ forecast.humidity }}%</p>
 						<p class="card-text">Wind Speed: {{ forecast.wind_speed }} km/h</p>
 					</div>
