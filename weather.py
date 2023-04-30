@@ -28,7 +28,7 @@ def weather():
             "temperature": data["list"][0]["main"]["temp"],
             "humidity": data["list"][0]["main"]["humidity"],
             "windspeed": data["list"][0]["wind"]["speed"],
-            "icon": data["list"][0]["weather"][0]["icon"]
+            "icon": data["list"][0]["weather"][0]["icon"] + ".png",
         }
 
         forecasts = []
@@ -39,7 +39,7 @@ def weather():
                 "temperature": data["list"][i]["main"]["temp"],
                 "humidity": data["list"][i]["main"]["humidity"],
                 "wind_speed": data["list"][i]["wind"]["speed"],
-                "icon": data["list"][i]["weather"][0]["icon"]
+                "icon": data["list"][i]["weather"][0]["icon"] + ".png",
             }
             forecasts.append(forecast)
 

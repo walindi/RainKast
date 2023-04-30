@@ -32,15 +32,25 @@
 							<span class="card-subtitle text-muted mb-2" style="color: #868B94">{{ current_weather.description }}</span>
 						</div>
 
-						<p class="card-text">Humidity: {{ current_weather.humidity }}%</p>
-						<p class="card-text">Wind Speed: {{ current_weather.windspeed }} km/h</p>
-						<i class="fa-regular fa-wind"></i>
+						<div class="d-flex align-items-center">
+							<div class="flex-grow-1" style="font-size: 1rem;">
+								<p class="card-text">Humidity: {{ current_weather.humidity }}%</p>
+								<p class="card-text">Wind Speed: {{ current_weather.windspeed }} km/h</p>
+							</div>
+
+							<div>
+								{% set weather_icon = "http://openweathermap.org/img/w/" + current_weather.icon %}
+								<img src="{{ weather_icon }}" width="90px">
+							</div>
+						</div>
+						
 					</div>
 				</div>
 
 				<div>
 					<h3>Forecasts:</h3>
 				</div>
+
 				{% for forecast in forecasts %}
 				<div class="card mb-3" style="color: #4B515D; border-radius: 35px;">
 					<div class="card-body">
@@ -54,8 +64,18 @@
 							<span class="card-subtitle text-muted mb-2" style="color: #868B94">{{ forecast.description }}</span>
 						</div>
 
-						<p class="card-text">Humidity: {{ forecast.humidity }}%</p>
-						<p class="card-text">Wind Speed: {{ forecast.wind_speed }} km/h</p>
+						<div class="d-flex align-items-center">
+							<div class="flex-grow-1" style="font-size: 1rem;">
+								<p class="card-text">Humidity: {{ forecast.humidity }}%</p>
+								<p class="card-text">Wind Speed: {{ forecast.windspeed }} km/h</p>
+							</div>
+
+							<div>
+								{% set weather_icon = "http://openweathermap.org/img/w/" + forecast.icon %}
+								<img src="{{ weather_icon }}" width="90px">
+							</div>
+						</div>
+						
 					</div>
 				</div>
 				{% endfor %}
