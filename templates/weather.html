@@ -4,6 +4,13 @@
 	<title>RainKast - {{ city }}</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<style>
+		body {
+			background-image: url('static/images(2).jpeg');
+			background-repeat: no-repeat;
+		}
+	</style>
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
@@ -12,12 +19,12 @@
 
 	<nav class="navbar navbar-expand-sm bg-dark">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="#index">
+			<a class="navbar-brand" href="index.html">
 				<img src="static/logo-no-background.png" width=55 height=35>
 			</a>
 			<ul class="navbar-nav">
 				<li class="nav-item">
-					<a class="nav-link" href="#">Home</a>
+					<a class="nav-link" href="/">Home</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#">About</a>
@@ -31,7 +38,7 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->
 
-	<div class="container-fluid" style="background-color: #4B515D;">
+	<div class="container-fluid bg-info bg-gradient">
 		<div class="row">
 			<div class="col-sm-12 text-center">
 				<h1 class="my-5">Weather Forecast for {{ city }}</h1>
